@@ -78,6 +78,9 @@ class ItemComponent extends Component
         if ($id) {
             $item = Item::find($id);
             $item->delete();
+            $this->name = '';
+            $this->sale_price = '';
+            $this->updateForm = false;
             session()->flash('status', 'Item deleted successfully.');
         }
     }
